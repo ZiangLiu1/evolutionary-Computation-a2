@@ -1,0 +1,13 @@
+Analysis of Standard PSO (Swarm Size 30):
+
+Using a swarm size of 30, the PSO algorithm was executed across 10 independent runs. The results are shown in `metrics_std_pso.png`.
+
+- **Best Fitness**: The best fitness values steadily improved over 1000 iterations. By around 400-500 iterations, most runs had stabilized near the global optimum. The variation between runs is due to differences in the initial particle positions and velocities.
+  
+- **Swarm Distance**: The distance of the swarm’s center to the global optimum steadily decreased, indicating effective convergence. All runs demonstrated consistent movement toward the optimum.
+
+- **Standard Deviation**: The standard deviation of particle positions decreased over time, reflecting reduced exploration as the particles converged toward the best-known solution.
+
+- **Mean Velocity**: Particle velocities decreased steadily, signaling a shift from exploration to exploitation as the swarm approached the optimal region.
+
+The PSO with a swarm size of 30 exhibited reliable convergence, with most runs reaching near-optimal solutions. While minor variations between runs were observed, the algorithm demonstrated stability in moving towards the global optimum.

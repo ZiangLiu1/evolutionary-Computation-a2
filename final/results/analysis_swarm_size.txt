@@ -1,0 +1,13 @@
+Analysis of Swarm Size Comparison (Swarm Size 20):
+
+With a smaller swarm size of 20, the PSO exhibited faster convergence in some runs but showed more variability, as seen in `metrics_std_pso_swarm20.png`.
+
+- **Best Fitness**: The best fitness values improved more quickly than with the larger swarm, but there was greater variability, with several runs stagnating at local optima. Fewer particles limited the swarm’s exploration.
+
+- **Swarm Distance**: The distance of the swarm center to the global optimum decreased more quickly, but fluctuations suggest premature convergence in some runs.
+
+- **Standard Deviation**: The standard deviation of positions dropped faster than with the larger swarm, reflecting less exploration. This led to premature convergence for some runs.
+
+- **Mean Velocity**: Particle velocities decreased rapidly, which likely contributed to reduced exploration and faster, but less reliable, convergence.
+
+While the smaller swarm size allowed for quicker convergence, it also increased the likelihood of trapping in local optima, reducing the overall consistency of the results.

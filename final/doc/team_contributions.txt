@@ -1,0 +1,2 @@
+Team Contributions:
+This assignment was completed independently by Ziang Liu. Responsibilities included designing, coding, and testing the PSO library, running experiments with different swarm sizes, and performing the required analysis of the results.
