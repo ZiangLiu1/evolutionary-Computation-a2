@@ -1,14 +1,16 @@
-Architecture Design:
+Architecture Design
+The PSO library is designed using object-oriented principles with three main classes: RealValuedProblem, AckleyFunction, and ParticleSwarmOptimizer.
 
-The PSO library is designed using modular, object-oriented principles. The two main components are the **AckleyFunction** class and the **ParticleSwarmOptimizer** class.
+RealValuedProblem Class:
 
-1. **AckleyFunction Class**:
-   - This class represents the Ackley function, a widely used benchmark in optimization. It supports multiple dimensions and customizable bounds for the solution space.
-   - The key method is `evaluate()`, which computes the fitness value for a given solution. This function serves as the optimization target for the PSO algorithm.
+This abstract base class defines a general structure for real-valued optimization problems. It includes attributes for the number of dimensions and solution space bounds.
+The evaluate() method is abstract and must be implemented by subclasses, allowing flexibility for different optimization problems.
+AckleyFunction Class:
 
-2. **ParticleSwarmOptimizer Class**:
-   - This class implements the PSO algorithm, handling the initialization of particle positions and velocities. It updates the particles based on cognitive, social, and inertia factors.
-   - The main attributes include `swarm_size`, `positions`, `velocities`, `personal_best`, and `global_best`, which manage the particles' current and best-known positions.
-   - The `optimize()` method runs the algorithm for a specified number of iterations, updating particle velocities and positions while tracking the best solution found.
+This class inherits from RealValuedProblem and implements the Ackley function, a common benchmark in optimization. It has default bounds of (-30, 30) and supports multiple dimensions.
+The evaluate() method computes the fitness value for a given solution using the Ackley function formula, which serves as the objective for the PSO algorithm.
+ParticleSwarmOptimizer Class:
 
-The architecture allows for flexible experimentation by separating the optimization problem (AckleyFunction) from the optimization algorithm (PSO). The system can easily adapt to different problem instances or be extended with new optimization techniques.
+This class implements the PSO algorithm to optimize any subclass of RealValuedProblem. It manages a swarm of particles with attributes like positions, velocities, and best-known solutions.
+The optimizer updates particles based on cognitive, social, and inertia factors through the update_velocity() method. The optimize() method iterates over the swarm to find the best solution.
+The architecture separates the optimization problem (e.g., AckleyFunction) from the PSO algorithm, promoting flexibility and reuse. Other real-valued problems can easily be integrated by subclassing RealValuedProblem. This design ensures modularity, making it adaptable to future extensions.
